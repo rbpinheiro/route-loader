@@ -1,6 +1,6 @@
 {
   "name": "route-loader",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simple route loader for express. Enables you to list your routes on a json file instead of adding code to your main application file for each new route.",
   "keywords": [
     "route",
