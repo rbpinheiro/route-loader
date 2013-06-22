@@ -11,11 +11,11 @@
     "express",
     "expressjs"
   ],
-  "homepage": "",
-  "bugs": "",
+  "homepage": "https://github.com/rbpinheiro/route-loader",
+  "bugs": "https://github.com/rbpinheiro/route-loader/issues",
   "repository" : {
     "type" : "git",
-    "url" : ""
+    "url" : "https://github.com/rbpinheiro/route-loader.git"
   },
   "author": {
     "name" : "Rafael Pinheiro",
