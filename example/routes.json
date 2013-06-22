@@ -1,0 +1,10 @@
+{
+	"get /": {
+		"route": "index.index",
+		"permission": "all"
+	},
+	"get /admin": {
+		"route": "index.index",
+		"permisson": "admin"
+	}
+}

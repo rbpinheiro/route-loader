@@ -1,0 +1,27 @@
+{
+  "name": "route-loader",
+  "version": "0.0.1",
+  "description": "Simple route loader for express. Enables you to list your routes on a json file instead of adding code to your main application file for each new route.",
+  "keywords": [
+    "route",
+    "router",
+    "routing",
+    "loader",
+    "json",
+    "express",
+    "expressjs"
+  ],
+  "homepage": "",
+  "bugs": "",
+  "repository" : {
+    "type" : "git",
+    "url" : ""
+  },
+  "author": {
+    "name" : "Rafael Pinheiro",
+    "email" : "moriarty.pinheiro@gmail.com"
+  },
+  "dependencies": {
+    "xtend": "~2.0.6"
+  }
+}
