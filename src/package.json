@@ -17,6 +17,7 @@
     "type" : "git",
     "url" : "https://github.com/rbpinheiro/route-loader.git"
   },
+  "main": "route-loader.js",
   "author": {
     "name" : "Rafael Pinheiro",
     "email" : "moriarty.pinheiro@gmail.com"
