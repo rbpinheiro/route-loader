@@ -40,14 +40,18 @@ Now you can define your routes on a file named "routes.json". It will look like 
 ```
 
 The dot-separated syntax on the "route" parameter represents the path inside the routes folder to follow in order to find the right callback for that route.
+
 The string "index.about" tells us that the callback is inside a file named "index" and the callback is named "about".
+
 You can also have subfolders, you just need to join it on the route string.
+
 The string "site.index.about" tells us that the callback is inside a folder named site, inside a file named "index" and the callback is named "about".
 
 Advanced Usage
 ==============
 
 The simple usage examples assumes a few things:
+
     - Your code that answers to the web requests sits on a folder named "routes" (Express default)
     - Your routes file is named "routes.json"
 
