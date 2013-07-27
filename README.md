@@ -4,8 +4,8 @@ route-loader
 Simple route loader for express. Enables you to list your routes on a json file instead of adding code to your main application file for each new route.
 
 
-Simple usage
-==========
+Simple Usage
+============
 
 First off we import the package on our app.js file.
 
@@ -20,13 +20,13 @@ app.get('/', routes.index);
 app.get('/users', user.list);
 ```
 
-To this call:
+To this:
 
 ```
 router(app);
 ```
 
-Now you can define your routes on a file name "routes.json". It will look like this:
+Now you can define your routes on a file named "routes.json". It will look like this:
 
 ```
 {
@@ -35,6 +35,46 @@ Now you can define your routes on a file name "routes.json". It will look like t
     },
     "get /admin": {
         "route": "index.index"
+    }
+}
+```
+
+
+Advanced Usage
+==============
+
+The simple usage examples assumes a few things:
+    - Your code that answers to the web requests sits on a folder named "routes" (Express default)
+    - Your routes file is named "routes.json"
+
+If any of the above items is not true you can change the default routing call:
+
+```
+router(app);
+```
+
+To a more advanced one that accepts more parameters:
+
+```
+router({
+    app: app,
+	routes_directory: 'routes',
+	routes_file: 'routes.json'
+});
+```
+
+Also, you might want to provide extra data to each of the routes. You can do that on the "routes.json" file.
+This examples shows how to provide some auth role data so you can roll your authorization system:
+
+```
+{
+    "get /": {
+        "route": "index.index",
+        "permission": "all"
+    },
+    "get /admin": {
+        "route": "index.index",
+        "permission": "admin"
     }
 }
 ```
