@@ -29,23 +29,33 @@ router(app);
 Now you can define your routes on a file named "routes.json". It will look like this:
 
 ```
-{
-    "get /": {
-        "route": "index.index"
+[
+    {
+        "route": "/",
+        "callback": "index.index"
     },
-    "get /admin": {
-        "route": "index.index"
+    {
+        "route": "/",
+        "method": "post",
+        "callback": "index.index"
+    },
+    {
+        "route": "/admin",
+        "callback": "index.index"
     }
-}
+]
 ```
 
-The dot-separated syntax on the "route" parameter represents the path inside the routes folder to follow in order to find the right callback for that route.
+The method defaults to "get", but you can change it to any method that express support.
+
+The dot-separated syntax on the "callback" parameter represents the path inside the routes folder to follow in order to find the right callback for that route.
 
 The string "index.about" tells us that the callback is inside a file named "index" and the callback is named "about".
 
 You can also have subfolders, you just need to join it on the route string.
 
 The string "site.index.about" tells us that the callback is inside a folder named site, inside a file named "index" and the callback is named "about".
+
 
 Advanced Usage
 ==============
@@ -75,14 +85,22 @@ Also, you might want to provide extra data to each of the routes. You can do tha
 This examples shows how to provide some auth role data so you can roll your authorization system:
 
 ```
-{
-    "get /": {
-        "route": "index.index",
+[
+    {
+        "route": "/",
+        "callback": "index.index",
         "permission": "all"
     },
-    "get /admin": {
-        "route": "index.index",
-        "permission": "admin"
+    {
+        "route": "/",
+        "method": "post",
+        "callback": "index.index",
+        "permission": "all"
+    },
+    {
+        "route": "/admin",
+        "callback": "index.index",
+        "permisson": "admin"
     }
-}
+]
 ```
