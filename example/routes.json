@@ -1,10 +1,18 @@
-{
-	"get /": {
-		"route": "index.index",
+[
+	{
+		"route": "/",
+		"callback": "index.index",
 		"permission": "all"
 	},
-	"get /admin": {
-		"route": "index.index",
+	{
+		"route": "/",
+		"method": "post",
+		"callback": "index.index",
+		"permission": "all"
+	},
+	{
+		"route": "/admin",
+		"callback": "index.index",
 		"permisson": "admin"
 	}
-}
+]

@@ -46,28 +46,27 @@ module.exports = function (options) {
 		});	
 	}
 
-
 	fs.readFile(options.routes_file, 'utf8', function (err, data) {
 		if (err) {
 			console.log('Error: ' + err);
 			return;
 		}
 
-		routes_metadata = JSON.parse(data);
+		routes_data = JSON.parse(data);
 		readDir(options.routes_directory);
-		for (var r in routes_metadata) {
-			route = r.split(' ');
-			route_path = routes_metadata[r].route.split('.');
+		for (var r = 0; r < routes_data.length; r++) {
+			route = routes_data[r];
+			route_path = route.callback.split('.');
 			callback = routes;
 			for (var i = 0; i < route_path.length; i++) {
 				callback = callback[route_path[i]]
 			};
-			(function (meta) {
-				app[route[0]](route[1], function (req, res, next) {
-					req.route.loaderParams = meta;
+			(function (data) {
+				app[route.method || 'get'](route.route, function (req, res, next) {
+					req.route.loaderParams = data;
 					next();
 				}, callback);
-			}(routes_metadata[r]));
+			}(route));
 		}
 
 	});
